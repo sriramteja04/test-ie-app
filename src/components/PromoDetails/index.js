@@ -1,0 +1,5 @@
+export { default as PromoHeading } from './PromoHeading'
+export { default as PromoLink } from './PromoLink'
+export { default as PromoInitials } from './PromoInitials'
+export { default as PromoToggles } from './PromoToggles'
+export { default as EditPromoName } from '../../containers/EditPromoName'

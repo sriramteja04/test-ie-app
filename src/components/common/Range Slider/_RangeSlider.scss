@@ -1,0 +1,94 @@
+$border-radius: 20px;
+
+$primary: rgb(211, 211, 211);
+$base: #071739;
+$shadow-color: rgb(0, 128, 95);
+$lighter-shadow: rgba($shadow-color, 0.2);
+$white: #fff;
+$gray: #8c8c8c;
+$lighter-gray: rgba($gray, 0.1);
+$time-line-width: 400px;
+$transition: 0.3s all ease;
+
+@mixin dragIndicator($property, $background, $z-index) {
+    #{$property} {
+        position: absolute;
+        top: 0;
+        z-index: $z-index;
+        width: 0;
+        height: 5px;
+        border-radius: 1.125rem;
+        background: $background;
+
+        &::before {
+            opacity: 1;
+            content: attr(data-content);
+            display: block;
+            position: absolute;
+            top: -40px;
+            right: -23px;
+            width: 50px;
+            padding: 3px;
+            text-align: center;
+            color: white;
+            background: $shadow-color;
+            border-radius: 1rem;
+        }
+        &::after {
+            opacity: 1;
+            content: '';
+            display: block;
+            position: absolute;
+            top: -18px;
+            right: -8px;
+            border-top: 2rem solid $shadow-color;
+            border-left: 2rem solid transparent;
+            border-right: 2rem solid transparent;
+        }
+        #{$property}-drag {
+            position: absolute;
+            right: -7.5px;
+            top: -5px;
+            width: 15px;
+            height: 15px;
+            background-color: #fff;
+            border: 0.75px solid #ddd;
+            border-radius: 50%;
+            transition: all 0.3s;
+            &:hover {
+                box-shadow: 0 0 0 6px $lighter-shadow;
+            }
+        }
+    }
+}
+
+.range-slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    overflow: hidden;
+
+    .values {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        width: $time-line-width;
+    }
+
+    .slider {
+        position: relative;
+        margin: 0 auto;
+        width: $time-line-width;
+        height: 5px;
+        background: $primary;
+        border-radius: 5px;
+        cursor: pointer;
+
+        @include dragIndicator('#min', $primary, 2);
+        @include dragIndicator('#max', $shadow-color, 1);
+    }
+}

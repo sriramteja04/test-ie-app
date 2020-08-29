@@ -1,0 +1,180 @@
+.search-input {
+    width: 300rem;
+
+    &.sm {
+        width: 104rem;
+    }
+
+    &.md {
+        width: 190rem;
+    }
+
+    &.lg {
+        width: 200rem;
+    }
+
+    &.xl {
+        width: 300rem;
+    }
+
+    &__wrapper {
+        @include flex-col;
+        flex-wrap: wrap;
+        padding: 0.5rem 3rem;
+        border: 0.25rem solid lighten($color-black, 50%);
+        border-radius: 1rem;
+        font-size: 3.5rem;
+
+        .search-input-field {
+            @include flex-row;
+            position: relative;
+            width: 100%;
+            .input-search {
+                position: relative;
+                z-index: 1;
+                font-size: 4rem;
+                border: none;
+                color: $color-black;
+                width: calc(100% - 12rem);
+                height: 12rem;
+
+                &:focus {
+                    outline: none;
+                    transition: all 0.75s ease;
+                }
+
+                & + .label {
+                    content: 'Search for Regions';
+                    z-index: 2;
+                    position: absolute;
+                    top: 3.5rem;
+                    left: 1rem;
+                    font-size: 4rem;
+                    color: $color-black;
+                    transition: all 0.25s ease;
+                    cursor: text;
+                }
+
+                &:focus + .label,
+                &.has-value + .label {
+                    z-index: 2;
+                    position: absolute;
+                    top: -3rem;
+                    left: -1rem;
+                    padding: 0 3px;
+                    font-size: 3.5rem;
+                    background-color: $color-white;
+                    font-family: $font-medium;
+                    transition: all 0.3s ease;
+                }
+                &.no-data + .label {
+                    color: $color-textGray;
+                }
+                &:focus::-webkit-input-placeholder {
+                    color: lighten($color-black, 40%);
+                    font-size: 3.5rem;
+                }
+                &:focus::-moz-placeholder {
+                    color: lighten($color-black, 40%);
+                    font-size: 3.5rem;
+                }
+                &input:focus:-moz-placeholder {
+                    color: lighten($color-black, 40%);
+                    font-size: 3.5rem;
+                }
+                &input:focus:-ms-input-placeholder {
+                    color: lighten($color-black, 40%);
+                    font-size: 3.5rem;
+                }
+            }
+            .search-icon {
+                margin-left: 6rem;
+            }
+            ::-webkit-input-placeholder {
+                color: transparent;
+            }
+
+            :-moz-placeholder {
+                color: transparent;
+            }
+
+            ::-moz-placeholder {
+                color: transparent;
+            }
+
+            :-ms-input-placeholder {
+                color: transparent;
+            }
+
+            input[type='number']::-webkit-inner-spin-button,
+            input[type='number']::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            input[type='number'] {
+                -moz-appearance: textfield;
+            }
+        }
+        .selected-list {
+            @include flex-row;
+            flex-wrap: wrap;
+
+            &__pill {
+                @include flex-row;
+                padding: 1.5rem 3rem;
+                border-radius: 5rem;
+                background-color: $color-fadeGray;
+                margin: 2rem;
+                //padding-left: 3rem;
+            }
+
+            &__cancel {
+                height: 4rem;
+                width: 3rem;
+                margin-left: 4rem;
+                cursor: pointer;
+            }
+        }
+    }
+    &__list {
+        height: auto;
+        padding: 2rem;
+        border: 0.25rem solid lighten($color-black, 50%);
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        width: inherit;
+        margin-top: 0 !important;
+        border-top: transparent;
+
+        &.sm {
+            width: 104rem;
+        }
+
+        &.md {
+            width: 190rem;
+        }
+
+        &.lg {
+            width: 200rem;
+        }
+
+        &.xl {
+            width: 300rem;
+            margin-left: 0;
+        }
+
+        &.enableScroll {
+            height: 140rem;
+            overflow-y: scroll;
+        }
+
+        &__item {
+            padding: 2rem;
+            cursor: pointer;
+        }
+
+        &__loading {
+            border: 0.25rem solid $color-lightGray;
+        }
+    }
+}

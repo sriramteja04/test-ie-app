@@ -1,0 +1,103 @@
+.input-container {
+    position: relative;
+    width: 40rem;
+    display: inline-block;
+
+    @include config-field-prefixes(
+        '&.',
+        'width',
+        'md' 100rem,
+        'lg' 120rem,
+        'xl' 150rem,
+        'sm' 55rem,
+        'xs' 33rem,
+        'xxs' 24rem
+    );
+
+    @include config-field-prefixes('&.', 'height', 'xl' 12.5rem);
+
+    .input {
+        width: inherit;
+        border: 0.25rem solid $color-lightGray;
+        border-radius: 1rem;
+        @include flex-row(flex-start, center);
+        background-color: $color-white;
+
+        &:focus-within {
+            border: 0.25rem solid $color-primary-dark;
+            transition: 0.25s all ease-in;
+        }
+
+        &__end {
+            background-color: $color-white;
+            display: inline;
+            margin-right: 3rem;
+        }
+
+        &.error {
+            border: 0.25rem solid $color-red;
+            .input__control + .label {
+                color: $color-red;
+            }
+        }
+
+        &__control {
+            position: relative;
+            z-index: 1;
+            width: calc(100% - 7rem);
+            height: 14rem;
+            font-size: 4rem;
+            padding: 4.5rem;
+            border-radius: 1rem;
+            background-color: $color-white;
+            border: none;
+            flex-grow: 2;
+
+            @include input-label('.label', 4.5rem, 3rem, -2rem, 2.5rem);
+
+            &:focus {
+                outline: none;
+            }
+
+            &:focus::-webkit-input-placeholder {
+                color: lighten($color-black, 40%);
+                font-size: 3.5rem;
+            }
+            &:focus::-moz-placeholder {
+                color: lighten($color-black, 40%);
+                font-size: 3.5rem;
+            }
+            &input:focus:-moz-placeholder {
+                color: lighten($color-black, 40%);
+                font-size: 3.5rem;
+            }
+            &input:focus:-ms-input-placeholder {
+                color: lighten($color-black, 40%);
+                font-size: 3.5rem;
+            }
+        }
+
+        ::-webkit-input-placeholder {
+            color: transparent;
+        }
+
+        :-moz-placeholder {
+            color: transparent;
+        }
+
+        ::-moz-placeholder {
+            color: transparent;
+        }
+
+        :-ms-input-placeholder {
+            color: transparent;
+        }
+    }
+    &__error-label {
+        display: block;
+        font-size: 3rem;
+        margin-top: 2rem;
+        color: $color-red;
+        font-family: 'Roboto Medium', sans-serif;
+    }
+}

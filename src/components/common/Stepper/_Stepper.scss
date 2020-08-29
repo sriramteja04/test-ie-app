@@ -1,0 +1,84 @@
+.stepper {
+    &__step {
+        margin-bottom: 10rem;
+        position: relative;
+        .progress {
+            align-items: center;
+            width: 10rem;
+            margin-right: 3rem;
+            position: absolute;
+            height: 100%;
+            top: 3rem;
+            &__step {
+                text-align: center;
+                font-size: 4rem;
+                padding: 2rem;
+                border: 0.5rem solid $color-primary-dark;
+                color: $color-primary-dark;
+                border-radius: 50%;
+                &.close {
+                    color: $color-black;
+                    background-color: $color-disabledGray;
+                    border-color: $color-disabledGray;
+                    border-radius: 6rem;
+                }
+                &.partial {
+                    background-color: $color-primary-dark;
+                    border: none;
+                }
+            }
+            &__bar {
+                position: absolute;
+                top: 15rem;
+                left: 4rem;
+                height: calc(100% - 10rem);
+                width: 1.5rem;
+                background-color: lighten($color-disabledGray, 5%);
+                transition: 0.25s all ease;
+                &.last {
+                    height: 0;
+                }
+            }
+        }
+        .step-container {
+            @include flex-col(flex-start, flex-start);
+            transition: 0.5s all ease-out;
+            border: 0.25rem solid $color-lightGray;
+            height: auto;
+            width: 95%;
+            margin-left: 15rem;
+            font-size: 4rem;
+            background-color: $color-white;
+            &__heading {
+                padding: 5.5rem 6.25rem;
+                text-transform: capitalize;
+                font-size: 4.5rem;
+                font-family: 'Roboto Medium', sans-serif;
+                width: 100%;
+                &.open {
+                    border-bottom: 1px solid $color-lightGray;
+                }
+            }
+            &__children {
+                padding: 7.75rem;
+                transition: 0.5s all ease-out;
+                width: 100%;
+                border-top: 0.25rem solid $color-lightGray;
+                .partial-content {
+                    @include flex-row(space-between, center);
+                    width: 100%;
+                    &__body {
+                        flex-grow: 2;
+                    }
+                    &__editable {
+                        @include flex-row;
+                        cursor: pointer;
+                    }
+                }
+            }
+            &__actions {
+                padding: 7.75rem;
+            }
+        }
+    }
+}

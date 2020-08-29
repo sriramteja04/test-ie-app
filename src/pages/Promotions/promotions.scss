@@ -1,0 +1,12 @@
+.promo-link {
+    margin: 4rem;
+    color: $color-black;
+    &:hover {
+        color: $color-primary-dark;
+        text-decoration: underline;
+    }
+}
+
+.promotions {
+    @include table-page-layout;
+}

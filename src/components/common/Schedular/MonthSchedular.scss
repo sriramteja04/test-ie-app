@@ -1,0 +1,59 @@
+.scheduler {
+    margin-top: 10rem;
+    margin-bottom: 12rem;
+
+    background-color: $color-white;
+    &__toolbar {
+        background-color: $color-white;
+        padding-top: 5rem;
+        padding-left: 5rem;
+        @include flex-row(flex-start, center);
+        .icons {
+            @include flex-row(center, center);
+            //width: 15rem;
+            margin-right: 10rem;
+            .text {
+                width: 24rem;
+                text-align: center;
+                font-size: 4.5rem;
+            }
+        }
+    }
+    &__grid-system {
+        margin-top: 6rem;
+        padding: 5rem;
+        background-color: $color-white;
+        .grid-row {
+            display: grid;
+            font-size: 4rem;
+            grid-template-columns: repeat(7, 1fr);
+            > * {
+                border-bottom: 1px solid $color-lightGray;
+                border-left: 1px solid $color-lightGray;
+
+                &:nth-child(7n) {
+                    border-right: 1px solid $color-lightGray;
+                }
+            }
+
+            &--date-cell {
+                padding: 2rem 0rem;
+                height: 45rem;
+                text-align: left;
+                .curr-date {
+                    padding: 2rem;
+                }
+            }
+            &--header {
+                height: 12rem;
+                text-align: left;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                font-family: $font-medium;
+                border-top: 3px solid $color-primary-dark;
+            }
+        }
+    }
+}

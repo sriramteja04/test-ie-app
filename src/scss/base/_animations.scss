@@ -1,0 +1,85 @@
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -300%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -60%);
+    }
+}
+
+@keyframes moveInUpwards {
+    0% {
+        transform: translate(-50%, -60%);
+    }
+
+    100% {
+        transform: translate(-50%, -200%);
+    }
+}
+
+@keyframes contentdown {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(10%);
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-25rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveRightContent {
+    0% {
+        opacity: 0;
+        transform: translateX(105%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes promo-links {
+    0% {
+        transform: translateY(-25rem);
+    }
+    80% {
+        transform: translateY(3rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes content-dropdown {
+    0% {
+        transform: translateY(-25rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes content-upwards {
+    0% {
+        transform: translateY(25rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

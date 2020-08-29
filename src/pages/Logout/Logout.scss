@@ -1,0 +1,9 @@
+.logout {
+    height: 50rem;
+    transform: translate(0%, 80%);
+    @include flex-col(center, center);
+    p,
+    button {
+        margin-top: 6rem;
+    }
+}

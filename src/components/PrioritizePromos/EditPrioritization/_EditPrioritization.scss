@@ -1,0 +1,53 @@
+.edit-prioritization {
+    font-size: 4rem;
+    padding: 8rem 12rem;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 96% 1fr;
+    grid-template-rows: max-content 1fr;
+    &__container {
+        .alert__modal {
+            .modal {
+                &__heading {
+                    .heading {
+                        font-family: $font-bold;
+                    }
+                }
+            }
+        }
+        .tool-bar {
+            border-bottom: 0.25rem solid $color-line;
+            //padding-bottom: 5rem;
+            &__date {
+                &--day {
+                    font-size: 2.75rem;
+                    font-family: $font-bold;
+                    color: $color-silver;
+                    text-transform: uppercase;
+                }
+                &--complete-date {
+                    font-size: 5rem;
+                    font-family: $font-bold;
+                }
+            }
+
+            &__navs {
+                margin-bottom: 8rem;
+                margin-top: 8rem;
+            }
+        }
+        .placements-cards {
+            margin-top: 14rem;
+            &__titles {
+                margin-bottom: 8rem;
+            }
+        }
+    }
+    &__actions {
+        .btn {
+            margin-top: 16rem;
+            margin-bottom: 16rem;
+        }
+    }
+}

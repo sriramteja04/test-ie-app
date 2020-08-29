@@ -1,0 +1,48 @@
+.bulk-edit {
+    background-color: $color-dark-banner;
+    height: 15rem;
+    position: relative;
+    @include flex-row;
+    transition: 0.25s all ease;
+    z-index: 5;
+    width: 100%;
+    &__records {
+        color: $color-white;
+        flex-grow: 2;
+        margin-left: 6rem;
+        font-size: 3.5rem;
+    }
+    &__actions {
+        @include flex-row;
+        .clear {
+            text-decoration-line: underline;
+            border: none;
+        }
+        &__menu {
+            &.open {
+                color: $color-primary-dark;
+                background-color: $color-white;
+            }
+            &.close {
+                color: $color-white;
+            }
+            border: 0.25rem solid $color-white;
+            padding: 0rem 3rem;
+            border-radius: 4px;
+            cursor: pointer;
+            height: 10rem;
+        }
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        width: 4rem;
+        height: 4.5rem;
+        left: 6rem;
+        top: 14rem;
+        border: 2rem solid $color-primary-dark;
+        transform-origin: 0 0;
+        transform: rotate(-45deg);
+        box-shadow: -2.5px 1.5px 0 0 $color-fadeGray;
+    }
+}

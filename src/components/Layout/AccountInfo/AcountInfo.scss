@@ -1,0 +1,63 @@
+.account_outer {
+    position: absolute;
+    background-color: $color-white;
+    min-width: 50rem;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.23);
+    z-index: 100;
+    white-space: nowrap;
+    transition: 0.5s all ease;
+    top: 23rem;
+    right: 7rem;
+    width: 85rem;
+    height: auto;
+    font-size: 3.5rem;
+
+    .account_info {
+        width: 100%;
+        &__userIcon {
+            height: 19.55rem;
+            width: 19.55rem;
+            background-color: $color-primary-dark;
+            color: $color-white;
+            border-radius: 50%;
+            margin: 4rem;
+            text-align: center;
+            font-size: 8rem;
+            line-height: 19.55rem;
+            display: inline-block;
+        }
+
+        &__details {
+            word-break: break-all;
+            padding: 2rem;
+            display: inline-block;
+            .name {
+                font-family: $font-medium;
+            }
+            .email {
+                white-space: initial;
+                margin-top: 1rem;
+            }
+        }
+
+        &__logout {
+            border-top: 0.25rem solid #efefef;
+            border-bottom: 0.25rem solid #efefef;
+            margin-bottom: 4rem;
+            padding: 4rem;
+            border-left: 1rem solid transparent;
+            &__icon {
+                display: inline;
+            }
+            &__text {
+                display: inline;
+                margin-left: 3rem;
+            }
+            &:hover {
+                background-color: $color-background;
+                border-left: 1rem solid $color-primary-dark;
+                cursor: pointer;
+            }
+        }
+    }
+}

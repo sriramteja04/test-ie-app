@@ -1,0 +1,59 @@
+.app-placements {
+    //padding: 7rem;
+    //border-top: 1px solid $color-lightGray;
+    height: 100%;
+    &__apps {
+        margin-top: 5rem;
+        @include flex-col;
+    }
+
+    &.null {
+        display: none;
+    }
+
+    &__tiles {
+        width: 250rem;
+        margin: 6rem 5rem;
+        @include flex-row(flex-start, center);
+    }
+
+    &__tile {
+        background-color: $color-white;
+        box-shadow: 0 0 14px 1px rgba(212, 214, 213, 100);
+        width: 51.5rem;
+        margin-right: 5.25rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        &.selected {
+            border: 0.5rem solid $color-primary-dark;
+            transition: 0.25s ease all;
+        }
+    }
+
+    &__flag {
+        position: absolute;
+        clip-path: polygon(0 0, 100% 100%, 100% 0);
+        background-color: $color-primary-dark;
+        width: 15rem;
+        height: 12rem;
+        float: right;
+        margin-left: 36rem;
+        transition: 0.25s ease all;
+        .progress-checkmark {
+            margin-left: 8rem;
+            margin-top: 0.5rem;
+        }
+    }
+
+    &__content {
+        @include flex-col(center, center);
+        text-align: center;
+        padding: 12.25rem 0;
+    }
+
+    &__partial-content {
+        span {
+            margin-right: 2rem;
+        }
+    }
+}

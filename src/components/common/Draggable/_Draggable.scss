@@ -1,0 +1,13 @@
+.fixed {
+    transition: transform 500ms;
+    z-index: 1;
+    position: relative;
+    width: 100%;
+}
+
+.dragging {
+    transition: none;
+    z-index: 20;
+    position: absolute;
+    width: 100%;
+}

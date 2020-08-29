@@ -1,0 +1,8 @@
+.marketing {
+    &__stepper {
+        padding: 15rem 10rem;
+        background-color: $color-white;
+        border-top: 0.25rem solid $color-lightGray;
+        z-index: 1;
+    }
+}

@@ -1,0 +1,88 @@
+.header {
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    background-color: $color-white;
+    box-shadow: 0 0 3px 0 rgba(133, 133, 133, 0.23);
+    height: 23rem;
+    display: flex;
+    flex-direction: column;
+
+    &__top-bar {
+        height: 2.25rem;
+        background: #028ba5; /* Old browsers */
+        background: linear-gradient(
+            to right,
+            #028ba5 0%,
+            #2076b2 100%
+        ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#028ba5', endColorstr='#2076b2',GradientType=0 ); /* IE6-9 */
+    }
+
+    .toolbar {
+        top: 0;
+        width: 96.5%;
+        margin: auto;
+        @include flex-row;
+        height: 16rem;
+
+        &__heading {
+            flex-grow: 2;
+            margin-left: 4rem;
+            transition: 0.2s ease-out;
+            @include flex-row(flexstart, center);
+
+            .sevenNowLogo {
+                margin-right: 4rem;
+                font-size: 4rem;
+                width: 32.25rem;
+                height: 9.5rem;
+            }
+            .vertical-line {
+                width: 3px;
+                background-color: $color-disabledGray;
+                height: 28px;
+                margin-right: 4rem;
+            }
+        }
+
+        &--actions {
+            display: inline-block;
+            //z-index: 100;
+            @include flex-row;
+            &.addbutton {
+                cursor: pointer;
+                font-size: 4rem;
+                font-family: 'Roboto Medium', sans-serif;
+                margin-right: 4rem;
+                padding: 2.5rem;
+                &:hover {
+                    color: $color-primary-dark;
+                }
+            }
+            &.underline {
+                border-bottom: 1.125rem solid $color-primary-dark;
+                padding-top: 5px;
+            }
+
+            .userIcon {
+                height: 50px;
+                width: 50px;
+                background-color: $color-primary-dark;
+                color: $color-white;
+                border-radius: 50%;
+                cursor: pointer;
+                margin: 8px;
+                text-align: center;
+                font-size: 5rem;
+                line-height: 50px;
+            }
+
+            .create-new {
+                margin: 32rem;
+                margin-top: 22rem;
+            }
+        }
+    }
+}

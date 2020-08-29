@@ -1,0 +1,46 @@
+.promo-view-tile {
+    width: 100%;
+    margin: 0 auto 2rem;
+    height: 16rem;
+    border: 0.25rem solid $color-lightGray;
+    background-color: $color-white;
+    padding: 2rem;
+    @include flex-col(space-between, center);
+    &__name {
+        width: 100%;
+        font-size: 3rem;
+        font-family: $font-medium;
+        letter-spacing: 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    &__details {
+        @include flex-row(space-between, center);
+        width: 100%;
+
+        &--regions {
+            @include flex-row(space-between, center);
+            width: 10rem;
+            .region {
+                color: $color-white;
+                font-family: $font-medium;
+                font-size: 2.5rem;
+                letter-spacing: 0;
+                background-color: rgba(43, 43, 43, 1);
+                padding: 1rem 1.25rem;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                border-radius: 1rem;
+            }
+        }
+
+        &--priority {
+            @include flex-row(space-between, center);
+            font-size: 3.5rem;
+            width: 8rem;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    &__svg {
+        position: absolute;
+        top: 40%;
+        left: 45%;
+        padding: 4rem;
+        background-color: $color-white;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px #00000088;
+        width: 24rem;
+        height: 24rem;
+    }
+    &.in-line-loading {
+        position: relative;
+        height: 60rem;
+        background-color: $color-white;
+        .spinner__svg {
+            box-shadow: none;
+        }
+    }
+}
+
+.modal-spinner {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    .spinner__svg {
+        box-shadow: none;
+        background-color: transparent;
+        border-radius: none;
+    }
+}

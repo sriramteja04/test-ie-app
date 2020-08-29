@@ -1,0 +1,63 @@
+.heading-primary {
+    @include heading(7rem, $font-bold);
+}
+
+.heading-secondary {
+    @include heading(6rem, $font-medium);
+}
+.heading-terinary {
+    @include heading(5rem, $font-medium);
+}
+
+.paragraph {
+    font-size: 4rem;
+    display: inline-block;
+    &.inline {
+        display: inline;
+    }
+    &.block {
+        display: block;
+    }
+    &.primary {
+        font-size: 5.5rem;
+        font-family: $font-medium;
+        text-transform: capitalize;
+    }
+    &.secondary {
+        font-size: 4.5rem;
+        font-family: $font-medium;
+        text-transform: capitalize;
+    }
+    &.sub {
+        font-size: 3.5rem;
+        font-family: $font-light;
+    }
+
+    &.regular {
+        font-family: $font-regular;
+    }
+
+    &.bold {
+        font-family: $font-medium;
+    }
+
+    &.italic {
+        font-family: $font-italic;
+    }
+
+    &.danger {
+        color: $color-red;
+        font-family: $font-medium;
+    }
+
+    &.disabled {
+        color: $color-darkGray;
+    }
+    &.success {
+        color: $color-primary-dark;
+    }
+
+    &.trasandina {
+        font-family: $font-trasandina-bold;
+    }
+}

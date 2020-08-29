@@ -1,0 +1,7 @@
+@function set-color($color) {
+    @if (lightness($color) > 40) {
+        @return $color-textGray;
+    } @else {
+        @return $color-white;
+    }
+}

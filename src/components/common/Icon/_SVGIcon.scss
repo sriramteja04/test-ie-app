@@ -1,0 +1,41 @@
+.svg-icon {
+    @include svg-icon(9);
+
+    @include SVG-Widths(
+        '&.',
+        'xxxs' 2,
+        'xxs' 4,
+        'xs' 6,
+        'sm' 7,
+        'md' 10,
+        'lg' 15,
+        'xl' 18,
+        'xxl' 24
+    );
+
+    @include config-field-prefixes(
+        '&.',
+        'color',
+        'disable' $color-silver,
+        'danger' $color-red,
+        'color-check' $color-success,
+        'success' $color-primary-dark,
+        'warning' $color-warning
+    );
+
+    &.rotate {
+        transform: rotate(180deg);
+    }
+
+    &.pointer {
+        cursor: pointer;
+    }
+
+    @include config-field-prefixes(
+        '&.',
+        'display',
+        'inline' inline,
+        'block' block,
+        'inline-block' inline-block
+    );
+}

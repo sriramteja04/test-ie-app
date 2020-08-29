@@ -1,0 +1,27 @@
+.content {
+    @include flex-col();
+    margin-top: 10rem;
+    margin-bottom: 40rem;
+    .input {
+        margin-left: 0;
+        width: inherit;
+    }
+}
+
+.details {
+    margin-top: 10rem;
+    &__toggles {
+        margin-top: 4rem;
+        @include flex-col(flex-start, flex-start);
+    }
+
+    &__sub-heading {
+        font-size: 4rem;
+        font-family: 'Roboto Medium', sans-serif;
+    }
+}
+
+.promo--heading {
+    font-size: 6.5rem;
+    flex-grow: 2;
+}

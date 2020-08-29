@@ -1,0 +1,18 @@
+.picker {
+    @include flex-col();
+
+    &.sm {
+        width: 65rem;
+    }
+
+    &.md {
+        width: 104rem;
+    }
+
+    &__error {
+        width: 65rem;
+        color: $color-red;
+        font-size: 3.5rem;
+        margin-top: 2rem;
+    }
+}

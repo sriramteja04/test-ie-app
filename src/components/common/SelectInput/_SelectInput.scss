@@ -1,0 +1,186 @@
+.select-input {
+    position: relative;
+    width: 80rem;
+    display: inline;
+
+    @include config-field-prefixes(
+        '&.',
+        'width',
+        'xxs' 24rem,
+        'xs' 31rem,
+        'sm' 40rem,
+        'md' 65rem,
+        'lg' 120rem,
+        'xl' 160rem,
+        'xxl' 176rem
+    );
+
+    .select-container {
+        @include flex-row();
+        padding: 1.5rem 2.75rem;
+        border: 0.25rem solid $color-disabledGray;
+        border-radius: 1rem;
+        z-index: -1;
+        cursor: pointer;
+        height: 13.4075rem;
+        width: inherit;
+
+        &.light {
+            background-color: $color-white;
+        }
+
+        &.edit {
+            cursor: text;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        &.show-options {
+            border: 0.4rem solid $color-primary-dark;
+        }
+
+        &__value {
+            flex-grow: 2;
+            color: $color-textGray;
+        }
+
+        &__label {
+            position: absolute;
+            left: 3rem;
+            top: -2rem;
+            padding: 0 1rem;
+            z-index: 5;
+            background-color: $color-white;
+            color: $color-black;
+            font-size: 3.5rem;
+
+            &.colored-label {
+                color: $color-primary-dark;
+            }
+
+            &.selected {
+                color: $color-primary-dark;
+            }
+        }
+
+        &__icons {
+            @include flex-row();
+        }
+
+        &__counter {
+            @include flex-col();
+
+            svg {
+                cursor: pointer;
+            }
+        }
+
+        .select-textfield {
+            display: inline;
+            flex-grow: 2;
+            position: relative;
+
+            input[type='number']::-webkit-inner-spin-button,
+            input[type='number']::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+            }
+
+            &:focus + .outline {
+                border: 0.25rem solid $color-primary-dark;
+            }
+
+            &__control {
+                outline: none;
+                padding: 2.75rem 1rem;
+                border: none;
+                font-size: 3.5rem;
+                flex-grow: 2;
+                width: 100%;
+                color: $color-textGray;
+                background-color: transparent;
+
+                &.read-only {
+                    cursor: pointer;
+                    width: 100%;
+                }
+
+                @include input-label('.input-label', 2.5rem, 0, -4rem, -1rem);
+            }
+        }
+    }
+
+    &__dropdown {
+        position: absolute;
+        //left: 1px;
+        background-color: $color-white;
+        list-style: none;
+        box-shadow: 0 3px 6px 2px rgba(133, 133, 133, 0.23);
+        max-height: 53.75rem;
+        //height: auto;
+        overflow-y: auto;
+        margin: auto;
+        border-radius: 1rem;
+        transition: 0.25s ease all;
+        z-index: 50;
+        width: inherit;
+        min-width: 24rem;
+        font-size: 4rem;
+        .option {
+            padding: 3rem 6rem;
+            color: $color-black;
+            cursor: pointer;
+
+            &.selected {
+                background-color: $color-background;
+            }
+
+            &:hover {
+                background-color: $color-background;
+            }
+        }
+    }
+
+    &.inline-select {
+        position: relative;
+        display: inherit;
+        width: inherit;
+
+        .select-input__dropdown {
+            width: 39rem;
+            max-height: 15rem;
+        }
+
+        .select-container {
+            width: 40rem;
+            height: 10rem;
+            &.outline {
+                padding: 0;
+                border-color: $color-primary-dark;
+            }
+
+            .select-textfield {
+                &__control {
+                    text-transform: capitalize;
+                    padding: 1rem;
+                }
+            }
+
+            &__icon {
+                svg {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    &__error {
+        color: $color-red;
+        font-size: 3.5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        width: inherit;
+        .outline {
+            border: 0.25rem solid $color-red;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+.schedule {
+    @include flex-col;
+    flex-wrap: wrap;
+    // height: 100%;
+
+    &.null {
+        display: none;
+    }
+    p {
+        font-size: 3.5rem;
+    }
+
+    &__allDay {
+        margin-top: 8rem;
+        margin-bottom: 15rem;
+    }
+
+    &__time {
+        @include flex-col;
+        .pickers {
+            @include flex-row;
+            align-items: baseline;
+            margin-top: 8rem;
+        }
+    }
+
+    .text {
+        color: $color-overlay;
+        font-size: 3rem;
+    }
+    &__repeat-setup {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(100px, 330px));
+        grid-column-gap: 2.5rem;
+        grid-row-gap: 6.25rem;
+
+        .repeat-every-label {
+            font-size: 3.5rem;
+            align-self: center;
+        }
+
+        .paragraph {
+            grid-column: span 3;
+        }
+
+        .repeat-setting {
+            &__common {
+                display: grid;
+                grid-template-columns: repeat(3, auto);
+                grid-row-gap: 6rem;
+                .day_counter {
+                    grid-column: 2 / span 2;
+                }
+            }
+            &__yearly {
+                grid-column: span 3;
+            }
+            &__end {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                grid-column-gap: 4rem;
+            }
+        }
+    }
+}

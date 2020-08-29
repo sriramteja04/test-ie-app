@@ -1,0 +1,93 @@
+$color-background: rgb(245, 245, 245);
+$color-black: rgb(50, 58, 69);
+$color-blue: rgb(40, 124, 186);
+$color-dark-banner: rgb(16, 127, 98);
+$color-darkGray: rgba(109, 114, 120, 1);
+$color-disabledGray: rgb(213, 213, 215);
+$color-line: rgba(216, 216, 216, 1);
+$color-error: rgb(244, 67, 54);
+$color-fadeGray: rgba(0, 0, 0, 0.1);
+$color-fbBlue: rgb(60, 81, 147);
+$color-gray: rgb(168, 168, 168);
+$color-lightGray: rgb(211, 211, 211);
+$color-orange: rgb(236, 113, 32);
+$color-overlay: rgba(0, 0, 0, 0.6);
+$color-primary-dark: rgb(0, 128, 95);
+$color-progress: rgb(22, 169, 0);
+$color-purple: rgba(53, 38, 84, 1);
+$color-red: rgb(236, 37, 38);
+$color-success: rgb(65, 164, 75);
+$color-textGray: rgb(91, 97, 107);
+$color-white: rgb(255, 255, 255);
+$color-warning: rgba(238, 113, 2, 1);
+$color-mediumGray: rgba(240, 240, 240, 1);
+$color-lightBlue: rgba(221, 236, 248, 1);
+$color-silver: rgba(183, 183, 183, 1);
+
+$default-font-size: 4rem;
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../assets/fonts/Roboto-Regular.woff2');
+}
+
+@font-face {
+    font-family: 'Roboto Italic';
+    src: url('../../assets/fonts/Roboto-Italic.woff2');
+}
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('../../assets/fonts/Roboto-Light.woff2');
+}
+
+@font-face {
+    font-family: 'Roboto Light Italic';
+    src: url('../../assets/fonts/Roboto-LightItalic.woff2');
+}
+
+@font-face {
+    font-family: 'Roboto Thin';
+    src: url('../../assets/fonts/Roboto-Thin.woff2');
+}
+
+@font-face {
+    font-family: 'Roboto Black';
+    src: url('../../assets/fonts/Roboto-Black.woff2');
+}
+
+@font-face {
+    font-family: 'Roboto Medium';
+    src: url('../../assets/fonts/Roboto-Medium.woff2');
+}
+
+@font-face {
+    font-family: 'Roboto Medium Italic';
+    src: url('../../assets/fonts/Roboto-MediumItalic.woff2');
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('../../assets/fonts/Roboto-Bold.woff2');
+}
+
+@font-face {
+    font-family: 'Trasandina Bold';
+    src: url('../../assets/fonts/TrasandinaBold.woff2');
+}
+
+@font-face {
+    font-family: 'Trasandina Regular';
+    src: url('../../assets/fonts/trasandina_black.ttf');
+}
+
+$font-regular: 'Roboto', sans-serif;
+$font-italic: 'Roboto Italic', sans-serif;
+$font-thin: 'Roboto Thin', sans-serif;
+$font-light-italic: 'Roboto Light Italic', sans-serif;
+$font-medium: 'Roboto Medium', sans-serif;
+$font-medium-italic: 'Roboto Medium Italic', sans-serif;
+$font-bold: 'Roboto Bold', sans-serif;
+$font-light: 'Roboto Light', sans-serif;
+$font-trasandina-bold: 'Trasandina Bold', sans-serif;
+$font-trasandina-regular: 'Trasandina Regular', sans-serif;

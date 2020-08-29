@@ -1,0 +1,10 @@
+.indicator {
+    @include flex-row();
+    svg,
+    img {
+        margin-right: 2rem;
+    }
+    p {
+        margin-right: 4rem;
+    }
+}

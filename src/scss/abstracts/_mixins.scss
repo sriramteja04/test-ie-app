@@ -1,0 +1,227 @@
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin flex-row($justify-content: flex-start, $align-items: center) {
+    display: flex;
+    flex-direction: row;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin flex-col($justify-content: flex-start, $align-items: flex-start) {
+    display: flex;
+    flex-direction: column;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin svg-icon($size) {
+    svg {
+        font-size: #{$size}rem;
+    }
+}
+
+@mixin SVG-Widths($prefix, $widths...) {
+    @each $tuple in $widths {
+        #{$prefix}#{nth($tuple,1)} {
+            @include svg-icon(nth($tuple, 2));
+        }
+    }
+}
+
+@mixin config-widths($prefix, $widths...) {
+    @each $tuple in $widths {
+        #{$prefix}#{nth($tuple,1)} {
+            width: nth($tuple, 2);
+        }
+    }
+}
+
+@mixin config-field-prefixes($prefix, $Field, $props...) {
+    @each $tuple in $props {
+        #{$prefix}#{nth($tuple,1)} {
+            #{$Field}: nth($tuple, 2);
+        }
+    }
+}
+
+@mixin button-colors($bgColor, $color, $border: none, $darkenPer: 0%) {
+    background-color: $bgColor;
+    color: $color;
+    border: $border;
+    &:hover {
+        background-color: darken($bgColor, $darkenPer);
+    }
+}
+
+@mixin heading($font-size, $font-family) {
+    font-size: $font-size;
+    font-family: $font-family;
+    text-transform: capitalize;
+    display: inline-block;
+    &.inline {
+        display: inline;
+    }
+    &.block {
+        display: block;
+    }
+    &.trasandina {
+        font-family: $font-trasandina-bold;
+    }
+}
+
+@mixin input-label($prefix, $top, $left, $FocusTop, $FocusLeft) {
+    & + #{$prefix} {
+        width: 50rem;
+        position: absolute;
+        top: $top;
+        left: $left;
+        padding: 0 1rem;
+        font-size: 4rem;
+        color: $color-gray;
+        z-index: 1;
+        transition: 0.25s all ease;
+        cursor: text;
+    }
+
+    &:focus + #{$prefix},
+    &.has-value + #{$prefix} {
+        position: absolute;
+        top: $FocusTop;
+        left: $FocusLeft;
+        padding: 0 1rem;
+        font-size: 3.5rem;
+        width: auto;
+        background-color: $color-white;
+        z-index: 1;
+        font-family: 'Roboto Medium', sans-serif;
+        color: $color-textGray;
+        transition: 0.25s all ease;
+    }
+
+    &:focus + #{$prefix} {
+        color: $color-primary-dark;
+    }
+}
+
+/* MEDIA QUERY MANAGER
+
+0 - 600px:      mobile
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint argument choices:
+- mobile
+- tab-portrait
+- tab-landscape
+- desktop
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == mobile {
+        @media only screen and (max-width: 1023px) {
+            @content; //0 - 600px
+        }
+    }
+    @if $breakpoint == tab-portrait {
+        @media only screen and (min-width: 1024px) and (max-width: 1199px) {
+            @content; //600 - 1000px
+        }
+    }
+    @if $breakpoint == tab-landscape {
+        @media only screen and (min-width: 1200px) and (max-width: 1439px) {
+            @content; //900 - 1200px
+        }
+    }
+    @if $breakpoint == desktop {
+        @media only screen and (min-width: 1800px) {
+            @content; //1800px+
+        }
+    }
+}
+
+@mixin move-right {
+    animation-name: moveRightContent;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+}
+
+@mixin move-left {
+    animation-name: moveInLeft;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+}
+
+@mixin move-up-animation {
+    animation-name: content-upwards;
+    animation-duration: 0.75s;
+    animation-timing-function: ease;
+}
+
+@mixin table-page-layout {
+    display: grid;
+    grid-template-columns: 86% 14%;
+    grid-auto-rows: auto;
+    grid-row-gap: 2rem;
+
+    grid-template-areas:
+        'tool-bar inplace-edit'
+        'bulk-edit bulk-edit'
+        'table-outer table-outer'
+        'no-results no-results'
+        'column-config table-pagination'
+        'load-more load-more';
+
+    .table-toolbar {
+        grid-area: tool-bar;
+        & > {
+            margin-bottom: 8rem;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .toggle-inplace-edit {
+        grid-area: inplace-edit;
+        justify-self: end;
+        align-self: end;
+    }
+
+    .bulk-edit {
+        grid-area: bulk-edit;
+        margin-bottom: -4rem;
+    }
+
+    .table-outer,
+    .table {
+        grid-area: table-outer;
+    }
+
+    .column-config {
+        grid-area: column-config;
+    }
+
+    .table__footer {
+        grid-area: table-pagination;
+        width: 58rem;
+        justify-self: end;
+    }
+    .table__load-more {
+        grid-area: load-more;
+        justify-self: center;
+    }
+    .no-results {
+        margin-top: -4rem;
+        grid-area: no-results;
+    }
+}

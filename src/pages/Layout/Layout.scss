@@ -1,0 +1,5 @@
+.layout {
+    &__breadcrumb-dropdown {
+        @include flex-row;
+    }
+}

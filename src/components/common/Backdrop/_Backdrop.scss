@@ -1,0 +1,12 @@
+.backdrop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50; // (Above Header and Container and below SideMenu)
+
+    &.showOpacity {
+        background-color: rgba(0, 0, 0, 0.65);
+    }
+}

@@ -1,0 +1,12 @@
+.double-chevron {
+    @include flex-row(space-between, center);
+    width: 21.5rem;
+    &.md-gap {
+        width: 14rem;
+    }
+    &__content {
+        font-size: 4rem;
+        margin: auto;
+        text-align: center;
+    }
+}

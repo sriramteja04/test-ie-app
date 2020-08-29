@@ -1,0 +1,21 @@
+.table-toolbar {
+    font-size: 4rem;
+    display: inline-block;
+    // grid-row:
+    .table__title {
+        margin-bottom: 8rem;
+    }
+    &__search {
+        @include flex-row();
+        margin-bottom: 2rem;
+        .filter-table {
+            .filter-btn {
+                height: 14.5rem;
+            }
+        }
+    }
+    &__pill-list {
+        @include flex-row();
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,18 @@
+.rule_complete_content {
+    padding: 5rem;
+    @include flex-col(center, center);
+
+    //svg{
+    //  background-color: $color-primary-dark;
+    //}
+
+    p {
+        font-family: $font-trasandina-bold;
+        font-size: 7rem;
+        line-height: 12rem;
+    }
+}
+
+.rule_complete_action {
+    margin-left: 60rem;
+}

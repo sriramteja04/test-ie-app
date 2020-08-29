@@ -1,0 +1,57 @@
+.side-drawer {
+    margin-top: 10rem;
+    border-top: 0.25rem solid $color-disabledGray;
+    font-size: 4rem;
+    a {
+        text-decoration: none;
+        &:visited {
+            color: $color-black;
+        }
+    }
+    &__item {
+        @include flex-row(flex-start, center);
+        flex-wrap: wrap;
+        font-size: 4.5rem;
+        border-bottom: 0.25rem solid $color-disabledGray;
+        padding: 5rem;
+        cursor: pointer;
+        color: $color-black;
+        transition: 0.25s ease all;
+        border-left: 1.25rem solid transparent;
+
+        &.selected {
+            border-left: 1.25rem solid $color-primary-dark;
+            background-color: $color-background;
+        }
+
+        &__main {
+            flex-grow: 2;
+            margin-left: 2rem;
+            text-transform: capitalize;
+            &.selected {
+                color: $color-primary-dark;
+            }
+        }
+
+        &__sub-menu {
+            padding-left: 7.25rem;
+            transition: 0.25s ease all;
+            width: 100%;
+            height: 100%;
+            div {
+                font-size: 3.5rem !important;
+                border: none !important;
+                padding: 1rem !important;
+                color: $color-black !important;
+                text-decoration: none !important;
+                &:hover {
+                    font-family: 'Roboto Bold', sans-serif;
+                }
+            }
+        }
+
+        &:hover {
+            background-color: $color-background;
+        }
+    }
+}

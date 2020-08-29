@@ -1,0 +1,23 @@
+.warning-modal {
+    width: 120rem;
+    height: 79.5rem;
+    &__heading {
+        width: 100%;
+        @include flex-col(flex-start, flex-start);
+        .warning-text {
+            font-size: 4rem;
+            font-family: $font-medium;
+        }
+    }
+    &__content {
+        margin-top: 4rem;
+        font-size: 3.5rem;
+        line-height: 5rem;
+    }
+
+    &__actions {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

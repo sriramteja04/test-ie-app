@@ -1,0 +1,68 @@
+.btn {
+    padding: 0.5rem 4rem;
+    font-size: 3.2rem;
+    font-weight: 700;
+    border-radius: 1rem;
+    cursor: pointer;
+    height: 10rem;
+    top: 0;
+    transition: all ease 0.3s;
+    border: 0.25rem solid $color-lightGray;
+    font-family: $font-regular;
+    background-color: $color-white;
+
+    &.icons {
+        @include flex-row(center, center);
+        height: 13rem;
+        font-size: 4rem;
+        font-family: $font-light;
+    }
+
+    &:hover {
+        background-color: darken($color-white, 4%);
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &.basic {
+        background-color: inherit;
+        color: $color-primary-dark;
+        &:hover {
+            background-color: darken($color-white, 5%);
+        }
+    }
+
+    &-transparent {
+        @include button-colors(transparent, set-color(transparent), 1px solid $color-white, 0%);
+    }
+
+    &-dark {
+        @include button-colors($color-primary-dark, $color-white, none, 3%);
+    }
+
+    &-warning {
+        @include button-colors($color-warning, $color-white, none, 3%);
+    }
+
+    &-light {
+        @include button-colors($color-white, $color-black, 1px solid $color-lightGray, 5%);
+    }
+
+    &-disabled {
+        @include button-colors($color-disabledGray, $color-black);
+        cursor: not-allowed;
+    }
+
+    //Various widths for the buttons.
+    @include config-field-prefixes(
+        '&.',
+        'min-width',
+        'no-children' auto,
+        'md' 32rem,
+        'lg' 46.75rem,
+        'xl' 72rem,
+        'xxl' 87rem
+    );
+}

@@ -1,0 +1,16 @@
+.error-message {
+    @include flex-row(flex-start, flex-start);
+    &__text {
+        margin-top: 0.5rem;
+        .warning {
+            font-size: 3.5rem;
+            color: $color-red;
+            font-family: 'Roboto Bold', sans-serif;
+        }
+        .info {
+            font-size: 3rem;
+            font-style: italic;
+            font-family: 'Roboto Light', sans-serif;
+        }
+    }
+}

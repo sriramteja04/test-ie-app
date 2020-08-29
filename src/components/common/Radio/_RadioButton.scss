@@ -1,0 +1,51 @@
+$md-radio-size: 18px;
+$md-radio-checked-size: 10px;
+
+.radioButton {
+    margin: 2rem 0;
+    font-size: 3.4rem;
+
+    input[type='radio'] {
+        display: none;
+
+        &:checked + label:before {
+            border-color: $color-black;
+        }
+
+        &:checked + label:after {
+            transform: scale(1);
+        }
+    }
+
+    label {
+        position: relative;
+        padding-left: 6rem;
+        padding-right: 3rem;
+        cursor: pointer;
+
+        &:before,
+        &:after {
+            position: absolute;
+            content: '';
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        &:before {
+            left: 0;
+            top: 0;
+            width: $md-radio-size;
+            height: $md-radio-size;
+            border: 2px solid $color-black;
+        }
+
+        &:after {
+            top: $md-radio-size / 2 - $md-radio-checked-size / 2;
+            left: $md-radio-size / 2 - $md-radio-checked-size / 2;
+            width: $md-radio-checked-size;
+            height: $md-radio-checked-size;
+            transform: scale(0);
+            background: $color-black;
+        }
+    }
+}

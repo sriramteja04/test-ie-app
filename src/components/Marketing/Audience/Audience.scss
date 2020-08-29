@@ -1,0 +1,30 @@
+.audience {
+    @include flex-col;
+    height: 100%;
+    &.null {
+        display: none;
+    }
+    &__content {
+        padding-top: 6.5rem;
+        &__search {
+            width: 250rem;
+        }
+    }
+    &__options {
+        @include flex-col;
+        margin-bottom: 4rem;
+        .checkbox {
+            margin-bottom: 5rem;
+        }
+    }
+    .regional {
+        margin-top: 5rem;
+    }
+    &__partialContent {
+        @include flex-col(flex-start, flex-start);
+        padding: 1rem;
+        .paragraph {
+            padding: 1rem;
+        }
+    }
+}

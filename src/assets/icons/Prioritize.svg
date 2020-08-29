@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="12px" viewBox="0 0 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Icon/Prioritize</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="8---CalendarView" transform="translate(-550.000000, -916.000000)">
+            <g id="Group-5-Copy-8" transform="translate(444.000000, 400.000000)">
+                <g id="Icon/Prioritize2" transform="translate(105.000000, 512.000000)">
+                    <g id="Icon/General/Caret-Up">
+                        <rect id="Bounding-Box" x="0" y="0" width="20" height="20"></rect>
+                    </g>
+                    <g id="Group" transform="translate(1.666667, 4.166667)" fill="#000000">
+                        <path d="M3.3036405,0.198183406 C3.03023577,-0.0660611352 2.57456122,-0.0660611352 2.2829295,0.198183406 L0.205053548,2.20644192 C-0.0683511827,2.47068646 -0.0683511827,2.91109402 0.205053548,3.19295487 C0.478458279,3.45719941 0.93413283,3.45719941 1.22576454,3.19295487 L2.0824327,2.36498864 L2.0824327,10.4861042 C2.0824327,10.8736629 2.41051838,11.17314 2.793285,11.17314 C3.17605162,11.17314 3.5041373,10.8560466 3.5041373,10.4861042 L3.5041373,2.36498864 L4.36080546,3.19295487 C4.50662131,3.33388529 4.68889113,3.4043505 4.87116095,3.4043505 C5.05343077,3.4043505 5.2357006,3.33388529 5.38151645,3.19295487 C5.65492118,2.92871033 5.65492118,2.48830276 5.38151645,2.20644192 L3.3036405,0.198183406 Z" id="Path" fill-rule="nonzero"></path>
+                    </g>
+                    <g id="Group-2" transform="translate(8.333333, 4.166667)" fill="#000000">
+                        <rect id="Rectangle-Copy-3" x="0" y="3.793262e-14" width="10" height="1.16666667" rx="0.583333333"></rect>
+                        <rect id="Rectangle-Copy-4" x="0" y="3.33333333" width="8.33333333" height="1.16666667" rx="0.583333333"></rect>
+                        <rect id="Rectangle-Copy-5" x="0" y="6.66666667" width="5.83333333" height="1.16666667" rx="0.583333333"></rect>
+                        <rect id="Rectangle-Copy-6" x="0" y="10" width="3.33333333" height="1.16666667" rx="0.583333333"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

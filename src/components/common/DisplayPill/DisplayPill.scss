@@ -1,0 +1,14 @@
+.displayPill {
+    width: fit-content;
+    height: auto;
+    &__label {
+        border-radius: 1rem;
+        background-color: #2c2f35;
+        text-transform: uppercase;
+        color: white;
+        padding: 1rem;
+        font-family: $font-bold;
+        margin: 1rem;
+        font-size: 3rem;
+    }
+}

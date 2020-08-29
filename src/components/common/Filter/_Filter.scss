@@ -1,0 +1,76 @@
+.filter-container {
+    min-height: 100%;
+    @include flex-col(space-between);
+
+    .filter-menu {
+        @include flex-col;
+        padding: 8rem 8rem 4rem 8rem;
+        width: 100%;
+
+        &__header {
+            @include flex-row;
+            margin-bottom: 4rem;
+            width: 100%;
+
+            .filterBy {
+                font-size: 5rem;
+                flex-grow: 2;
+                font-family: $font-trasandina-bold;
+            }
+        }
+
+        &__body {
+            margin-top: 4rem;
+            //margin-bottom: 6rem;
+        }
+
+        &__item {
+            margin-bottom: 12rem;
+
+            &__heading {
+                font-size: 4rem;
+                font-family: $font-medium;
+            }
+        }
+
+        &__fields {
+            width: 100%;
+        }
+
+        &__text {
+            font-size: 3.5rem;
+        }
+
+        &__label {
+            margin-bottom: 3rem;
+            font-weight: bold;
+        }
+
+        &__checkbox {
+            @include flex-col;
+        }
+
+        &__dateRange {
+            @include flex-col;
+        }
+
+        &__error {
+            color: $color-error;
+        }
+
+        &__statusCheckbox {
+            display: grid;
+            grid-template-columns: repeat(2, max-content);
+            grid-row-gap: 2rem;
+            grid-column-gap: 10rem;
+            justify-content: flex-start;
+        }
+    }
+    .filter_actions {
+        margin-bottom: 6rem;
+        align-self: flex-start;
+        button {
+            margin-left: 9rem;
+        }
+    }
+}

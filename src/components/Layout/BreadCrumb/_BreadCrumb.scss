@@ -1,0 +1,33 @@
+.breadCrumb__outline {
+    width: 100%;
+    border-bottom: 0.75rem solid $color-white;
+}
+
+.breadCrumb {
+    font-size: 3rem;
+    margin: 23rem auto 0;
+    padding: 8rem 0;
+    width: 96%;
+    text-transform: capitalize;
+
+    &__list {
+        display: inline;
+    }
+
+    &__arrow {
+        margin: 0 3.5rem;
+    }
+
+    &__currentPage {
+        color: $color-primary-dark;
+        font-family: $font-medium;
+    }
+
+    &__prevPage {
+        text-decoration: none;
+        color: $color-black;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

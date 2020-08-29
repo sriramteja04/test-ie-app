@@ -1,0 +1,116 @@
+$drop-menu-width: 55rem;
+
+@mixin tip($left) {
+    ::after {
+        content: '';
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        top: 6px;
+        left: $left;
+        border: 2rem solid $color-white;
+        transform-origin: 0 0;
+        transform: rotate(-45deg);
+        box-shadow: 2px -2.25px 3px -2px rgba(0, 0, 0, 0.1);
+        z-index: -1;
+    }
+}
+
+@mixin positions($width) {
+    &.left {
+        left: -$width + 9;
+    }
+    &.middle {
+        left: -$width / 2;
+    }
+    &.right {
+        left: -2rem;
+    }
+}
+
+@mixin get-positions($width-type, $width-length) {
+    @if $width-type == 'sm' {
+        @include positions($width-length);
+    } @else if $width-type == 'md' {
+        @include positions($width-length);
+    } @else if $width-type == 'lg' {
+        @include positions($width-length);
+    } @else if $width-type == 'xl' {
+        @include positions($width-length);
+    }
+}
+
+.menu {
+    width: max-content;
+    &__content {
+        @include flex-row();
+        cursor: pointer;
+        font-size: 4rem;
+    }
+    .hover {
+        &:hover {
+            color: $color-primary-dark;
+        }
+    }
+
+    &__wrapper {
+        position: absolute;
+        color: $color-black;
+    }
+
+    &__list {
+        position: absolute;
+        top: -3rem;
+        z-index: 100;
+        box-shadow: 1px 2px 5px 0 rgba(39, 39, 39, 0.5);
+
+        &.xl {
+            width: 70rem;
+            @include get-positions('xl', 70rem);
+        }
+        &.lg {
+            width: 55rem;
+            @include get-positions('lg', 55rem);
+        }
+        &.md {
+            width: 36rem;
+            @include get-positions('md', 36rem);
+        }
+        &.sm {
+            width: 28rem;
+            @include get-positions('sm', 28rem);
+        }
+
+        &.tip-left {
+            @include tip(calc(6%));
+        }
+
+        &.tip-middle {
+            @include tip(calc(100% / 2));
+        }
+
+        &.tip-right {
+            @include tip(calc(83%));
+        }
+
+        &--item {
+            @include flex-row(flex-start, center);
+            border-left: 4px solid transparent;
+            border-bottom: 0.25rem solid $color-lightGray;
+            padding: 3.5rem 2rem 3.5rem 3rem;
+            background-color: $color-white;
+            cursor: pointer;
+            font-size: 4rem;
+            width: initial;
+            &:hover {
+                border-left: 1rem solid $color-primary-dark;
+                background-color: $color-background;
+                text-decoration-color: $color-primary-dark;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.prioritize-promos {
+    &__title {
+        font-size: 6rem;
+        font-family: $font-trasandina-bold;
+        margin-bottom: 8rem;
+    }
+    &__calendar {
+        width: 100%;
+        background-color: $color-white;
+        padding: 8.5rem;
+        border: 0.25rem solid $color-lightGray;
+        margin-bottom: 15rem;
+
+        .actions {
+            font-size: 4rem;
+            @include flex-row(flex-start, center);
+            margin-bottom: 6rem;
+
+            .btn {
+                margin-right: 9rem;
+                height: 14rem;
+                width: 20rem;
+            }
+
+            &__selected-month {
+                margin-left: 6rem;
+                font-size: 5rem;
+                font-family: $font-medium;
+            }
+        }
+    }
+}

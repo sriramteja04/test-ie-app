@@ -1,0 +1,51 @@
+.alert {
+    @include flex-row(flex-start, flex-start);
+    height: 18rem;
+    padding-top: 3.5rem;
+    background-color: $color-white;
+    border: 0.25rem solid $color-lightGray;
+
+    &.fill {
+        border: none;
+        color: $color-white;
+        @include flex-row(flex-start, baseline);
+        &.danger {
+            background-color: $color-error;
+        }
+        &.success {
+            background-color: $color-success;
+        }
+        .alert__icon {
+            transform: translateY(25%);
+        }
+    }
+
+    &.max {
+        width: 100%;
+        margin: auto;
+    }
+
+    &.outlined {
+        &.warning {
+            border-left: 1.5rem solid $color-warning;
+        }
+    }
+
+    &__content {
+        flex-grow: 2;
+        margin-left: 3.5rem;
+        margin-right: 2rem;
+
+        @include flex-col(center, flex-start);
+
+        &--title {
+            font-family: $font-medium;
+        }
+
+        &--title,
+        &--description {
+            font-size: 3.5rem;
+            line-height: 5rem;
+        }
+    }
+}

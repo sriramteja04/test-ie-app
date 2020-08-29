@@ -1,0 +1,45 @@
+.side-menu {
+    position: fixed;
+    height: 100%;
+    background: $color-white;
+    box-shadow: 1px 0 2px rgba(0, 0, 0, 0.5);
+    top: 0;
+    max-width: 240rem;
+    z-index: 200; // (Above Backdrop and Header)
+    //overflow-y: scroll;
+    overflow-x: hidden;
+    transition: all 0.5s ease-out;
+    visibility: hidden;
+
+    &.left {
+        transform: translateX(-100%);
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+        @include move-left;
+        left: 0;
+    }
+
+    &.right {
+        transform: translateX(100%);
+        @include move-right;
+        right: 0;
+    }
+
+    @include config-field-prefixes(
+        '&.',
+        'width',
+        'xxl' 260rem,
+        'lg' 124rem,
+        'xl' 210rem,
+        'sm' 70rem
+    );
+
+    &.open {
+        visibility: visible;
+        transition: all 0.4s ease;
+        transform: translateX(0%);
+    }
+    &__body {
+        width: inherit;
+        @include flex-col(space-between, flex-start);
+    }
+}
